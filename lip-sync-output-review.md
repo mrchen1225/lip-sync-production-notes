@@ -37,9 +37,36 @@ Review normal playback at the intended display size first. Use half-speed or ind
 
 The companion [review-sheet.csv](review-sheet.csv) contains headers and one clearly hypothetical example row. Replace the example with your actual observations. No customer data or generated-media URLs are included.
 
-Credits per usable output = total charged credits / number of usable outputs. For example, two hypothetical 20-credit attempts yielding one usable clip cost 40 credits per usable clip. Do not report a cost per usable clip when none passed; report the spend and zero usable outputs instead.
+Credits per usable output = net charged credits for the batch / number of usable outputs. Subtract only credit returns already recorded for that same batch. For example, two hypothetical 20-credit attempts, no credit returns and one usable clip cost 40 credits per usable clip. Do not report a cost per usable clip when none passed; report the spend and zero usable outputs instead.
 
 Do not average different models, durations or resolutions into a universal success rate. Keep a record of why an attempt was rejected: a timing issue and an aesthetic preference are different observations.
+
+## Set a stopping budget before the next attempt
+
+Download [retry-budget.py](retry-budget.py) and run it locally with Python 3. It uses only the standard library, reads no media or account data, and makes no network requests. The numbers below are **hypothetical**, not a current model quote or a measured success rate.
+
+```sh
+python3 retry-budget.py --quoted-credits 20 --planned-attempts 2
+```
+
+That sets a 40-credit budget for two attempts at the same 20-credit quote. If the selected model, duration or resolution changes, obtain a new quote before using this budget. This calculator does not cap charges inside a platform; you must stop submitting attempts yourself.
+
+After reviewing a batch, enter the charges and credit returns actually recorded for that same batch:
+
+```sh
+python3 retry-budget.py --quoted-credits 20 --planned-attempts 2 --charged-credits 40 --returned-credits 0 --usable-outputs 1
+```
+
+This hypothetical batch consumed 40 net credits and produced one usable output: 40 credits per usable output. Set `--usable-outputs 0` and the per-output value becomes `null`, not zero. You spent credits without a usable result; the calculator cannot infer a future success rate from that.
+
+| Number | Where it comes from | What it does not mean |
+| --- | --- | --- |
+| Quoted credits | The quote for the exact selected settings before submission | A promise that every later attempt costs the same |
+| Charged credits | The batch's actual account ledger | Only the clips you decided to keep |
+| Returned credits | Credit returns already recorded for that batch | A pending return, cash refund or chargeback |
+| Usable outputs | Your decision for one stated placement after review | A universal quality score |
+
+The script reports whether actual net credits exceeded the planned budget. It does not predict automatic credit returns, convert credits to money, or establish any vendor's refund policy. Keep the original charges and returns visible instead of treating rejected-but-completed clips as free.
 
 ## Check the input before paying again
 
