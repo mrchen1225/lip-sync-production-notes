@@ -4,6 +4,20 @@ A user clicks Generate, the request times out, and they click again. The backend
 
 This technical guide was drafted with AI assistance for LipSyncX on October 10, 2026. The design below is an illustrative application architecture, not a description of LipSyncX's internal implementation or a vendor API contract.
 
+## Choose the next check
+
+Resource index updated with AI assistance for LipSyncX on October 19, 2026. These are working notes and tools, not an independent product ranking.
+
+| Your next task | Resource | What to record |
+| --- | --- | --- |
+| Diagnose a distracting mouth or timing issue | [Output review guide](lip-sync-output-review.md) | The exact word or timestamp, source revision, and one input change |
+| Compare actual attempts on the same inputs | [Reusable review sheet](review-sheet.csv) | Quoted and charged credits, timing, mouth shape, identity, and the reason to keep or reject a clip |
+| Set a retry budget and summarize the batch | [Local credit-budget calculator](retry-budget.py) | Current quote, planned attempts, actual charges, posted credit returns, and usable outputs |
+
+The CSV contains a clearly hypothetical example row; replace it with your own observations. The calculator uses Python 3 without extra packages or network calls. Its budget does not enforce a platform spending cap. With zero usable outputs, it preserves the spend and leaves unit cost undefined.
+
+For a five-step procedure, use the maintained [mismatch runbook](https://goldtech.gitbook.io/goldtech-docs/diagnose-a-lip-sync-mismatch-before-rerendering). The architecture guide below addresses a different problem: distinguishing an uncertain submission from a new intended render.
+
 ## Separate the user request from the provider job
 
 Create an application record for each intended render. Keep its identity stable while the request is being retried. A provider job identifier belongs to that record; it should not become the only evidence that the user requested something.
