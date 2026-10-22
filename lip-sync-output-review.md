@@ -68,6 +68,34 @@ This hypothetical batch consumed 40 net credits and produced one usable output: 
 
 The script reports whether actual net credits exceeded the planned budget. It does not predict automatic credit returns, convert credits to money, or establish any vendor's refund policy. Keep the original charges and returns visible instead of treating rejected-but-completed clips as free.
 
+## Reconcile charges and credit returns once
+
+This example and the two CSV files were added with AI drafting for LipSyncX on October 22, 2026. **Every example entry is hypothetical.** They describe no real account, render result or provider refund promise.
+
+Use the [blank reconciliation template](credit-reconciliation-template.csv) for your private batch records. Open the [filled example](credit-reconciliation-example.csv) beside it:
+
+| Example entry | Status | Credits | Include in net spend? |
+| --- | --- | --- | --- |
+| Charge for attempt A | posted | 20 | Add |
+| Charge for attempt B | posted | 20 | Add |
+| Charge for attempt C | posted | 20 | Add |
+| Credit return for C | posted | 20 | Subtract once |
+| Possible credit return for A | pending | 20 | Leave out |
+
+The posted charges total 60; the posted return totals 20. Net spend is **40 credits**. The pending row does not reduce it to 20. If exactly one output meets your stated acceptance criterion, the batch costs 40 credits per usable output. With zero usable outputs, record 40 spent and zero usable; unit cost stays undefined.
+
+Keep one stable `record_id` per entry. If you import the same entry twice, count it once. A charge and its later return need separate records even when they refer to the same `attempt_id`. Where the account ledger has no unique reference, assign local record IDs and inspect possible duplicates manually. An unknown status is not evidence of a posted return.
+
+The fields are a local worksheet format, not an API schema or an automatic account export. Keep positive credit amounts in the CSV; `event_kind` determines whether to add or subtract. Keep each batch within one model, resolution, duration and credit system. Store your actual account references privately; the public files contain only made-up identifiers.
+
+The calculator does **not** read this CSV. Pass the totals after checking the rows:
+
+```sh
+python3 retry-budget.py --quoted-credits 20 --planned-attempts 3 --charged-credits 60 --returned-credits 20 --usable-outputs 1
+```
+
+These remain hypothetical inputs, not a current price. Do not turn an unliked but completed output into a credit return unless that return is recorded. Credit returns are separate from cash refunds.
+
 ## Check the input before paying again
 
 [Sync's official input guidance](https://sync.so/docs/compatibility-and-tips/media-content-tips) recommends avoiding full profiles, face obstructions, noisy audio and overlapping voices. These are provider-specific recommendations, not proof that every model accepts the same media.

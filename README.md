@@ -6,13 +6,14 @@ This technical guide was drafted with AI assistance for LipSyncX on October 10, 
 
 ## Choose the next check
 
-Resource index updated with AI assistance for LipSyncX on October 19, 2026. These are working notes and tools, not an independent product ranking.
+Resource index updated with AI assistance for LipSyncX on October 22, 2026. These are working notes and tools, not an independent product ranking.
 
 | Your next task | Resource | What to record |
 | --- | --- | --- |
 | Diagnose a distracting mouth or timing issue | [Output review guide](lip-sync-output-review.md) | The exact word or timestamp, source revision, and one input change |
 | Compare actual attempts on the same inputs | [Reusable review sheet](review-sheet.csv) | Quoted and charged credits, timing, mouth shape, identity, and the reason to keep or reject a clip |
 | Set a retry budget and summarize the batch | [Local credit-budget calculator](retry-budget.py) | Current quote, planned attempts, actual charges, posted credit returns, and usable outputs |
+| Reconcile a posted credit return without counting it twice | [Worked reconciliation example](lip-sync-output-review.md#reconcile-charges-and-credit-returns-once) and [blank CSV](credit-reconciliation-template.csv) | One record per entry; pending returns excluded from net spend |
 
 The CSV contains a clearly hypothetical example row; replace it with your own observations. The calculator uses Python 3 without extra packages or network calls. Its budget does not enforce a platform spending cap. With zero usable outputs, it preserves the spend and leaves unit cost undefined.
 

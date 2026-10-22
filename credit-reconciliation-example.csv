@@ -1,0 +1,6 @@
+batch_id,record_id,attempt_id,event_kind,event_status,credits,is_hypothetical
+hypothetical_batch,hyp_charge_a,attempt_a,charge,posted,20,true
+hypothetical_batch,hyp_charge_b,attempt_b,charge,posted,20,true
+hypothetical_batch,hyp_charge_c,attempt_c,charge,posted,20,true
+hypothetical_batch,hyp_return_c,attempt_c,credit_return,posted,20,true
+hypothetical_batch,hyp_pending_a,attempt_a,credit_return,pending,20,true
