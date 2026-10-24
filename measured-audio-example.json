@@ -1,0 +1,19 @@
+{
+  "channels": 1,
+  "sample_rate_hz": 48000,
+  "bits_per_sample": 16,
+  "frames": 297600,
+  "duration_seconds": 6.2,
+  "file_sha256": "a0c8c43a24947cd433add95299938e2103906787e863195b3983b8335856593a",
+  "pcm_sha256": "65678808bd7e2ac7a97bc419bcae9faf8aa09e32c38c54efa28c42e1c8004c58",
+  "reference_comparison": {
+    "alignment_assumption": "reference sample zero corresponds to output sample zero",
+    "compared_samples": 294104,
+    "reference_fully_covered": true,
+    "extra_frames_after_reference": 3496,
+    "prefix_byte_identical": false,
+    "maximum_absolute_16_bit_sample_difference": 1,
+    "different_samples": 76665,
+    "extra_tail_all_zero_samples": true
+  }
+}

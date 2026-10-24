@@ -1,0 +1,4 @@
+stage,filename,sample_rate_hz,channels,bits_per_sample,frames,duration_seconds,file_sha256
+reference,reference.wav,48000,1,16,294104,6.127166667,d7d18b3cdbfbe91f1b43baf978097636e21b2eac04964ec3b24add9c2a6eb8de
+constructed-padding,padded.wav,48000,1,16,486104,10.127166667,8d534eeef565b619706f70893a123fddd47663182d06d31133cd2c2dc9ccf66a
+browser-export,browser-trimmed.wav,48000,1,16,297600,6.200000000,a0c8c43a24947cd433add95299938e2103906787e863195b3983b8335856593a

@@ -96,6 +96,33 @@ python3 retry-budget.py --quoted-credits 20 --planned-attempts 3 --charged-credi
 
 These remain hypothetical inputs, not a current price. Do not turn an unliked but completed output into a credit return unless that return is recorded. Credit returns are separate from cash refunds.
 
+## Measure the exported audio before another render
+
+This file check was added with AI drafting for LipSyncX on October 24, 2026. It is an actual audio-preparation observation, with constructed silence, not a video-generation experiment.
+
+A 6.127167-second mono reference at 48,000 Hz contained 294,104 frames. Adding exactly two seconds of silence at each end produced 486,104 frames, or 10.127167 seconds. On October 23, the browser trimmer used Start 2.0, End 8.2, speed 1x and both fades off. The downloaded WAV was inspected on October 24:
+
+| Evidence | Observed value |
+| --- | --- |
+| Boundary inputs | 2.0 to 8.2 seconds |
+| Summary cards | 2.0 to 8.1 seconds; output 6.1 seconds |
+| Export player and actual WAV | 6.2 seconds |
+| Actual WAV | 297,600 frames; mono; 48,000 Hz; 16-bit PCM |
+| Extra tail after the reference | 3,496 silent frames, about 72.833 ms |
+
+The summary understated this export by 0.1 seconds. Inspect the actual file rather than using the summary as a precise measurement. The reference-aligned prefix was not byte-identical: its largest 16-bit sample difference was one integer unit. That is a numeric comparison, not a listening-quality verdict. No claim about a model's timing, credit charge or improved facial animation follows from it.
+
+Download [inspect-wav.py](inspect-wav.py) and run it with Python 3 on your own files. It uses only the standard library, makes no network calls and writes no files. Supply an uncompressed PCM WAV; renaming an MP3 or M4A extension does not decode it.
+
+```sh
+python3 inspect-wav.py edited.wav
+python3 inspect-wav.py edited.wav --reference aligned-reference.wav
+```
+
+The optional comparison assumes reference sample zero matches output sample zero. Align the reference first. A mismatch in channels, sample rate or bit depth is rejected; sample comparison currently supports 16-bit PCM only. `reference_fully_covered: false` means the output is shorter than the reference. A zero difference over an empty prefix does not establish a complete match.
+
+[measured-audio-example.json](measured-audio-example.json) is the saved numeric report from this owned-audio check. The [three-stage measurement CSV](audio-trim-measurements.csv) records reference, padded input and browser-export frame counts and hashes. These reports contain no recording, customer identifiers or private media links. Choose trim points from your own words, not from this fixture's timestamps.
+
 ## Check the input before paying again
 
 [Sync's official input guidance](https://sync.so/docs/compatibility-and-tips/media-content-tips) recommends avoiding full profiles, face obstructions, noisy audio and overlapping voices. These are provider-specific recommendations, not proof that every model accepts the same media.
@@ -103,3 +130,4 @@ These remain hypothetical inputs, not a current price. Do not turn an unliked bu
 For a concrete first-party example, LipSyncX's [two eight-second outputs](https://lipsyncx.com/blog/ai-talking-video-model-selection?utm_source=github&utm_medium=article&utm_campaign=geo_youtube_202610&utm_content=review-sheet-examples) use the same portrait and recording. They were generated on October 14 at 480p, charging 20 credits each. Those clips are examples to inspect, not results of the diagnostic protocol above.
 
 If you want to run the procedure on your own source, [open the talking-photo workflow](https://lipsyncx.com/ai-talking-photo-generator?utm_source=github&utm_medium=article&utm_campaign=geo_youtube_202610&utm_content=review-sheet-tool) and check the current quote before rendering. Keep your next attempt small enough to answer one question.
+
