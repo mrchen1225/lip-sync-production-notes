@@ -96,6 +96,38 @@ python3 retry-budget.py --quoted-credits 20 --planned-attempts 3 --charged-credi
 
 These remain hypothetical inputs, not a current price. Do not turn an unliked but completed output into a credit return unless that return is recorded. Credit returns are separate from cash refunds.
 
+## Allocate a paid pack without calling the balance a refund
+
+Added with AI drafting for LipSyncX on October 27, 2026. This is a **hypothetical accounting example**, not a purchase, generation test or current checkout quote. The reconciliation example above supplies 60 posted charges minus 20 posted returns = 40 net credits. Assume exactly one accepted output and one pack bought for USD 2.99 that supplied all 60 credits, without bonuses or discounts.
+
+The cash outlay is USD 2.99. Allocating that pack's price to 40 consumed credits gives about USD 1.99; the unconsumed balance is 20 credits. Those are three different figures. The remaining balance has not been refunded to a card.
+
+Run this small calculation locally with Python 3. It reads no files or account data and makes no network requests:
+
+```python
+from decimal import Decimal, ROUND_HALF_UP
+
+# Hypothetical: one paid pack, one currency, no bonus or discount.
+pack_paid = Decimal("2.99")
+pack_credits = 60
+posted_charges, posted_returns, usable = 60, 20, 1
+net = posted_charges - posted_returns
+assert 0 <= net <= pack_credits
+assert usable >= 0
+allocated = pack_paid * Decimal(net) / Decimal(pack_credits)
+unit = None if usable == 0 else allocated / Decimal(usable)
+print("cash_paid_USD", pack_paid)
+print("remaining_credits", pack_credits - net)
+print("allocated_spend_USD", allocated.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP))
+print("allocated_USD_per_usable", None if unit is None else unit.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP))
+```
+
+Expected output for these invented inputs: `cash_paid_USD 2.99`, `remaining_credits 20`, `allocated_spend_USD 1.99`, and `allocated_USD_per_usable 1.99`. Change `usable` to zero and the final value is `None`; neither the cash payment nor the consumed credits disappears. A pending return is excluded from `posted_returns`.
+
+This snippet assumes the batch consumed credits solely from that pack and calculates only the remaining balance attributable to it. It does not replace an account statement. With mixed packs, free credits or promotions, retain their separate acquisition records; do not assign the whole balance the smallest pack's price. Keep currencies separate. Taxes, exchange costs, editing time and other software are outside this allocation. The earlier `retry-budget.py` remains a credit calculator and does not perform this dollar calculation.
+
+Before another render, compare the current input quote with the balance actually available. Do not count an expected credit return as available credit or interpret a completed output you reject as a refundable failure. Check the [current pack and billing terms](https://lipsyncx.com/pricing?utm_source=github&utm_medium=article&utm_campaign=geo_youtube_202610&utm_content=review-sheet-pack-allocation) separately from this worked arithmetic.
+
 ## Measure the exported audio before another render
 
 This file check was added with AI drafting for LipSyncX on October 24, 2026. It is an actual audio-preparation observation, with constructed silence, not a video-generation experiment.
