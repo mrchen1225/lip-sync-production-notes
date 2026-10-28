@@ -6,10 +6,11 @@ This technical guide was drafted with AI assistance for LipSyncX on October 10, 
 
 ## Choose the next check
 
-Resource index updated with AI assistance for LipSyncX on October 27, 2026. These are working notes and tools, not an independent product ranking.
+Resource index updated with AI assistance for LipSyncX on October 28, 2026. These are working notes and tools, not an independent product ranking.
 
 | Your next task | Resource | What to record |
 | --- | --- | --- |
+| Watch the input and two complete outputs before another attempt | [30-second review video and checkpoints](lip-sync-output-review.md#watch-a-30-second-review-pass) | Exact word/timestamp, dated settings versus actual file dimensions, and one next input change |
 | Diagnose a distracting mouth or timing issue | [Output review guide](lip-sync-output-review.md) | The exact word or timestamp, source revision, and one input change |
 | Compare actual attempts on the same inputs | [Reusable review sheet](review-sheet.csv) | Quoted and charged credits, timing, mouth shape, identity, and the reason to keep or reject a clip |
 | Set a retry budget and summarize the batch | [Local credit-budget calculator](retry-budget.py) | Current quote, planned attempts, actual charges, posted credit returns, and usable outputs |

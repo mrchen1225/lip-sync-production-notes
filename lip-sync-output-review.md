@@ -33,6 +33,30 @@ Review normal playback at the intended display size first. Use half-speed or ind
 | Decision | Usable for the intended placement, or reason rejected |
 | Cost | Credits spent across all attempts, including rejected outputs |
 
+## Watch a 30-second review pass
+
+Added with AI drafting for LipSyncX on October 28, 2026. This montage reuses a fictional AI presenter and synthetic voice from our already-published October 14 example. It shows the input portrait and two complete outputs. No new generation or paid test was performed.
+
+[![Input portrait from the 30-second review demonstration](lip-sync-review-demo-poster.jpg)](lip-sync-review-demo.mp4)
+
+**[Open the 30-second video](lip-sync-review-demo.mp4)**. If the repository preview does not play, use its download control and open the MP4 locally. The H.264/AAC file is about 2.3 MB.
+
+| Video position | What to inspect |
+| --- | --- |
+| 0–4 seconds | The actual input portrait; confirm that the face and mouth are readable at your intended display size |
+| 4–12 seconds | The complete Fast output; note the first distracting word or pause, if any |
+| 12–20 seconds | The complete Pro output from the same portrait and voice; apply the same acceptance criterion |
+| 20–25 seconds | Write the word and timestamp, change one input, and set a retry budget |
+| 25–30 seconds | Read the dated settings and credit record before treating the example as a cost estimate |
+
+The October 14 record lists the selected setting as **480p** and the charge as **20 credits per output**. A fresh file inspection on October 28 finds **544 × 720 pixels and an 8.00-second container duration** in both downloaded originals. Selected settings and actual file dimensions are different fields; keep both in your own notes. Those historical charges are not current quotes.
+
+Each source video contains 197 frames at 25 fps (7.88 seconds), with audio lasting 8.00 seconds. The montage holds the final frame for the 0.12-second audio tail and plays both examples at 1×. It does not demonstrate generation speed or establish a winner.
+
+Use [review-sheet.csv](review-sheet.csv) alongside the clip: record the source revision, exact word/timestamp, decision for one stated placement, and the one variable you would change. An acceptable clip does not need an invented defect. If neither output works for your placement, record the spend and zero usable outputs; do not calculate a zero unit cost.
+
+Original first-party files: [portrait](https://lipsyncx.com/blog-assets/ai-talking-video-model-selection/portrait.jpg), [Fast](https://lipsyncx.com/blog-assets/ai-talking-video-model-selection/fast.mp4), [Pro](https://lipsyncx.com/blog-assets/ai-talking-video-model-selection/pro.mp4). The [dated example and settings record](https://lipsyncx.com/blog/ai-talking-video-model-selection?utm_source=github&utm_medium=article&utm_campaign=geo_youtube_202610&utm_content=review-demo-record) provides context. This is a reusable review demonstration, not a controlled model comparison or a success-rate claim.
+
 ## Copy the review sheet
 
 The companion [review-sheet.csv](review-sheet.csv) contains headers and one clearly hypothetical example row. Replace the example with your actual observations. No customer data or generated-media URLs are included.
@@ -159,7 +183,7 @@ The optional comparison assumes reference sample zero matches output sample zero
 
 [Sync's official input guidance](https://sync.so/docs/compatibility-and-tips/media-content-tips) recommends avoiding full profiles, face obstructions, noisy audio and overlapping voices. These are provider-specific recommendations, not proof that every model accepts the same media.
 
-For a concrete first-party example, LipSyncX's [two eight-second outputs](https://lipsyncx.com/blog/ai-talking-video-model-selection?utm_source=github&utm_medium=article&utm_campaign=geo_youtube_202610&utm_content=review-sheet-examples) use the same portrait and recording. They were generated on October 14 at 480p, charging 20 credits each. Those clips are examples to inspect, not results of the diagnostic protocol above.
+For a concrete first-party example, LipSyncX's [two eight-second outputs](https://lipsyncx.com/blog/ai-talking-video-model-selection?utm_source=github&utm_medium=article&utm_campaign=geo_youtube_202610&utm_content=review-sheet-examples) use the same portrait and recording. The October 14 record lists a selected setting of 480p and a charge of 20 credits each; inspection of the downloaded files finds 544 × 720 pixels. These are historical settings and charges, not current quotes. Those clips are examples to inspect, not results of the diagnostic protocol above.
 
 If you want to run the procedure on your own source, [open the talking-photo workflow](https://lipsyncx.com/ai-talking-photo-generator?utm_source=github&utm_medium=article&utm_campaign=geo_youtube_202610&utm_content=review-sheet-tool) and check the current quote before rendering. Keep your next attempt small enough to answer one question.
 
