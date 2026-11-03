@@ -57,6 +57,34 @@ Use [review-sheet.csv](review-sheet.csv) alongside the clip: record the source r
 
 Original first-party files: [portrait](https://lipsyncx.com/blog-assets/ai-talking-video-model-selection/portrait.jpg), [Fast](https://lipsyncx.com/blog-assets/ai-talking-video-model-selection/fast.mp4), [Pro](https://lipsyncx.com/blog-assets/ai-talking-video-model-selection/pro.mp4). The [dated example and settings record](https://lipsyncx.com/blog/ai-talking-video-model-selection?utm_source=github&utm_medium=article&utm_campaign=geo_youtube_202610&utm_content=review-demo-record) provides context. This is a reusable review demonstration, not a controlled model comparison or a success-rate claim.
 
+## Decide whether to use the introduction
+
+Added with AI drafting for LipSyncX on November 3, 2026. This is a production decision aid using the existing example, not a new render experiment or a scored comparison.
+
+**Choose the acceptance condition before choosing the model.** For a course opening, an example condition is: the approved sentence is complete and the presenter does not distract from the lesson when played at the intended size. That condition is a suggestion, not an observed verdict on either clip.
+
+Download the [blank placement decision card](placement-decision-template.csv). It contains a header only. Unlike the general review sheet, it keeps the intended placement, viewing width, file identity, dated charge and final production decision together. Keep your filled card private if it includes account references or unpublished media.
+
+1. **State the viewing condition.** Name the placement and record the actual display width in pixels. Compare both originals at normal speed under that same condition. If you also inspect a larger view, record it as another condition. Use slow playback only to locate a specific issue.
+2. **Identify what you reviewed.** Retain the exact output URL or filename and its hash, plus the portrait and narration revision. A hash identifies bytes; it does not measure naturalness. If the narration changes, start another comparison rather than treating it as the same-input pair.
+3. **Choose one production action.** Use the table below, then record the exact word and timestamp supporting your decision. Leave those fields empty until you have reviewed the actual clip.
+
+| Your review finds | Production action | Keep in the card |
+| --- | --- | --- |
+| The introduction meets the condition written before review | Accept the clip for that placement | Accepted file and viewing condition; no invented defect or mandatory retry |
+| The narration is approved, and the next part needs to show the product or lesson work | Cut to the screen recording or product shot with your approved narration | The word at the cut and a check of the edited export's timing |
+| The original output fails a named condition that still matters for the shot | Plan one targeted revision, then recheck the current quote | Distracting word/time, one input change, and the question another attempt would answer |
+
+A problem appearing only in the edited export goes back to the file/export check above. The table does not establish why a generated face looks wrong or promise that a revision will fix it.
+
+The separate [historical introduction case file](historical-intro-case.csv) supplies two factual rows for the October 14 Fast and Pro outputs. It is **not a completed decision card**: placement, acceptance criteria, word/time observations and decisions remain empty. Original quote and posted-return fields also remain empty because those records were not established; the dated **20-credit charge per output** is a different field.
+
+The local portrait/output hashes and file properties were rechecked on November 3 and match the retained October 28 bytes. The selected **480p** setting is distinct from the measured **544 × 720** files. The original article records the same portrait and narration; a separate uploaded-source audio file is unavailable for a new hash check. These rows provide traceability, not a winning model or a current price.
+
+For another comparison boundary, r4lph's [November 2 walkthrough at 0:14–0:35](https://www.youtube.com/watch?v=fIZF3u8Lw6k&t=14s) keeps the avatar animation while changing voice and mouth rendering. That is not a fixed-audio model comparison. Its description promotes Quant Alchemy courses and products; specific sponsorship terms are unknown. We use that distinction, not its voice scores or quality verdicts.
+
+Before another submission, write the one remaining question beside the current quote and your stopping budget. Accept a usable introduction, show the work when that serves the scene, or make a revision you can explain.
+
 ## Copy the review sheet
 
 The companion [review-sheet.csv](review-sheet.csv) contains headers and one clearly hypothetical example row. Replace the example with your actual observations. No customer data or generated-media URLs are included.
