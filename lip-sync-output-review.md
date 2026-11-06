@@ -85,6 +85,8 @@ For another comparison boundary, r4lph's [November 2 walkthrough at 0:14–0:35]
 
 Before another submission, write the one remaining question beside the current quote and your stopping budget. Accept a usable introduction, show the work when that serves the scene, or make a revision you can explain.
 
+For the editor, copy the [blank handoff note](editor-handoff-template.md). It adds original/export filenames, the spoken cut cue and the next check beside the existing 22-field card; it does not change the CSV schema. Link the note to the card using the exact output reference or hash you have. Leave missing source-audio hashes, quotes, returns and acceptance decisions blank. This resource was added with AI drafting for LipSyncX on November 6, 2026.
+
 ## Copy the review sheet
 
 The companion [review-sheet.csv](review-sheet.csv) contains headers and one clearly hypothetical example row. Replace the example with your actual observations. No customer data or generated-media URLs are included.
