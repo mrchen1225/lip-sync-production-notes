@@ -6,7 +6,7 @@ This technical guide was drafted with AI assistance for LipSyncX on October 10, 
 
 ## Choose the next check
 
-Resource index updated with AI assistance for LipSyncX on October 28, 2026. These are working notes and tools, not an independent product ranking.
+Resource index updated with AI assistance for LipSyncX on November 6, 2026. These are working notes and tools, not an independent product ranking.
 
 | Your next task | Resource | What to record |
 | --- | --- | --- |
@@ -20,7 +20,7 @@ Resource index updated with AI assistance for LipSyncX on October 28, 2026. Thes
 | Separate pack payment from the cost allocated to one usable output | [Runnable pack-allocation example](lip-sync-output-review.md#allocate-a-paid-pack-without-calling-the-balance-a-refund) | Cash paid, net credits, remaining balance and the single-pack assumptions |
 | Check whether an edited WAV matches its reported duration | [Measured audio file check](lip-sync-output-review.md#measure-the-exported-audio-before-another-render) and [local WAV inspector](inspect-wav.py) | Actual frames, duration, format and the limits of a reference comparison |
 
-The CSV contains a clearly hypothetical example row; replace it with your own observations. The calculator uses Python 3 without extra packages or network calls. Its budget does not enforce a platform spending cap. With zero usable outputs, it preserves the spend and leaves unit cost undefined.
+The general `review-sheet.csv` contains a clearly hypothetical example row; replace it with your own observations. The placement card has a header only, the historical case CSV has two factual rows with unestablished values left blank, and the editor handoff note is a blank companion for filenames and edit instructions. The calculator uses Python 3 without extra packages or network calls. Its budget does not enforce a platform spending cap. With zero usable outputs, it preserves the spend and leaves unit cost undefined.
 
 For a five-step procedure, use the maintained [mismatch runbook](https://goldtech.gitbook.io/goldtech-docs/diagnose-a-lip-sync-mismatch-before-rerendering). The architecture guide below addresses a different problem: distinguishing an uncertain submission from a new intended render.
 
