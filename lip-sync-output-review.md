@@ -182,6 +182,32 @@ This snippet assumes the batch consumed credits solely from that pack and calcul
 
 Before another render, compare the current input quote with the balance actually available. Do not count an expected credit return as available credit or interpret a completed output you reject as a refundable failure. Check the [current pack and billing terms](https://lipsyncx.com/pricing?utm_source=github&utm_medium=article&utm_campaign=geo_youtube_202610&utm_content=review-sheet-pack-allocation) separately from this worked arithmetic.
 
+## Approve names and translated lines before making the voice
+
+Added with AI drafting for LipSyncX on November 12, 2026. This is a suggested production check, not a new translation, voice or video-generation test.
+
+Keep a separate terminology record for each target language. Before making the voice, copy the names, numbers and abbreviations that must be spoken correctly. Ask the person approving that language to confirm the written form and a pronunciation cue; spelling approval alone does not tell you how an abbreviation should sound.
+
+Copy this header into a private worksheet. It has no example observations or acceptance decisions:
+
+```csv
+term,approved_writing,pronunciation_note,target_language,audio_revision,heard_word_and_time,next_action
+```
+
+Listen to the prepared audio without the picture, then use the matching row:
+
+| What you hear | What to revise | What to keep for review |
+| --- | --- | --- |
+| Wrong name, number or abbreviation | The script before voice creation, or the recording itself if that is your input | Approved form, pronunciation note and the revised audio filename |
+| Correct meaning but the line outlasts the intended shot | Shorter wording or another recording at a comfortable pace | First/last spoken words, actual audio duration and the intended shot |
+| Audio fits before editing but drifts in the export | Track placement or speed in the editing timeline | Original audio revision and the edited export, checked at the same word |
+
+Do not fill the observation fields from a transcript alone: listen to the actual audio revision. Character count is not measured duration. If you change the narration, retain the old filename and identify the new revision; it is no longer the same audio input used for an earlier render comparison.
+
+In LipSyncX, the [dubbing input guide](https://lipsyncx.com/ai-video-dubbing?utm_source=github&utm_medium=article&utm_campaign=geo_youtube_202610&utm_content=terminology-review) distinguishes written input in Text mode from uploaded or recorded audio. Changing written text does not repair a name already spoken incorrectly in an uploaded recording.
+
+Source: the available English automatic captions for [RW Crypto & AI Insights' Revovox walkthrough at 1:05–1:28](https://www.youtube.com/watch?v=tQK0cctvMKw&t=65s) recommend checking names and technical terms before dubbing. The segment editor described there belongs to Revovox; this does not establish that LipSyncX offers that editor. The creator shares a promotional discount link; payment and sponsorship terms are unknown. No raw captions or third-party footage are republished here.
+
 ## Measure the exported audio before another render
 
 This file check was added with AI drafting for LipSyncX on October 24, 2026. It is an actual audio-preparation observation, with constructed silence, not a video-generation experiment.
